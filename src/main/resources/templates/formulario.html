@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bootstrap Dashboard by Bootstrapious.com</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" th:href="@{/distribution/vendor/bootstrap/css/bootstrap.min.css}">
+    
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" th:href="@{/distribution/vendor/font-awesome/css/font-awesome.min.css}">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" th:href="@{/distribution/css/fontastic.css}">
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- jQuery Circle-->
+    <link rel="stylesheet" th:href="@{/distribution/css/grasp_mobile_progress_circle-1.0.0.min.css}">
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" th:href="@{/distribution/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css}">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" th:href="@{/distribution/css/style.default.css}" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" th:href="@{/distribution/css/custom.css}">
+    <!-- Favicon-->
+    <link rel="shortcut icon" th:href="@{/distribution/img/favicon.ico}">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+<body>
+	<h2>Formulario</h2>
+	<form class="container" method="post">
+		<div class="row">
+			<div class="form-group col-6">
+				<h6>Localização</h6>
+				<input type="text" class="form-control" value="" placeholder="Setor"></br>
+				<input type="text" class="form-control" value="" placeholder="Quadra">
+			</div>
+			<div class="form-group col-6">
+				<h6>Novo Zoneamento</h6>
+				<input type="text" class="form-control" value="" placeholder="Setor"></br>
+				<input type="text" class="form-control" value="" placeholder="Quadra">
+			</div>
+			<div class="form-group col-12">
+				<div class="row mb-3">
+					<div class="col-12">
+						<div class="card">
+							<div class="card-body">
+								<h6 class="card-title text-center">Distribuição de Cômodos</h6>
+								<div class="row">
+									<div class="col-6">
+										<input type="text" class="form-control mb-3" value="" placeholder="Quartos">
+										<input type="text" class="form-control mb-3" value="" placeholder="Banheiros">
+										<input type="text" class="form-control mb-3" value="" placeholder="Suites">
+									</div>
+									<div class="col-6">
+										<input type="text" class="form-control mb-3" value="" placeholder="Garagem">
+										<input type="text" class="form-control mb-3" value="" placeholder="Varanda">
+										<input type="text" class="form-control mb-3" value="" placeholder="Área de Serviços">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group col-12">
+				<div class="row mb-3">
+					<div class="col-12">
+						<div class="card">
+							<div class="card-body">
+								<h6 class="card-title text-center">Boletim Comercial</h6>
+								<div class="row">
+									<div class="form-group col-6">
+										<h6>Regime</h6>
+										<select class="form-control">
+											<option value="">SELECIONE</option>
+											<option value="">Pessoa Física</option>
+											<option value="">Pessoa Jurídica</option>
+											<option value="">Sociedade</option>
+										</select>
+									</div>
+									<div class="form-group col-6">
+										<h6>Atividade</h6>
+										<select class="form-control">
+											<option value="">SELECIONE</option>
+											<option value="">Comércio</option>
+											<option value="">Serviço</option>
+											<option value="">Automono</option>
+										</select>
+									</div>
+									<div class="form-group col-6">
+										<h6>Pavimentação</h6>
+										<select class="form-control">
+											<option value="">SELECIONE</option>
+											<option value="">Térreo</option>
+											<option value="">1 PAV.</option>
+											<option value="">2 PAV.</option>
+											<option value="">3 PAV.</option>
+											<option value="">4 PAV.</option>
+											<option value="">>4 PAV.</option>
+										</select>
+									</div>
+									<div class="form-check mb-3">
+										<input type="checkbox" class="form-check-input" value="">
+										<label for="" class="form-check-label">Alvará</label></br>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group col-6">
+				<h6>Tipo de Imovel</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>
+					<option value="">Predial</option>
+					<option value="">Territorial</option>
+					<option value="">Comercial</option>
+					<option value="">Predial/Comercial</option>
+				</select>
+			</div>
+			<div class="form-group col-6">
+				<h6>Uso do Solo</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>				
+					<option value="">Residencial</option>
+					<option value="">Comercial</option>
+					<option value="">Resid./Comercial</option>
+					<option value="">Construção</option>
+					<option value="">Terreno</option>
+					<option value="">Outros</option>
+				</select>
+			</div>
+			<div class="form-group col-6">
+				<h6>Situação do Imóvel</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>				
+					<option value="">Frente</option>
+					<option value="">Recuo</option>
+					<option value="">Casa de Vila</option>
+					<option value="">Esquina</option>
+					<option value="">Encravada</option>
+					<option value="">Outros</option>
+				</select>
+			</div>
+			<div class="form-group col-6">
+				<h6>Espécie</h6>
+				<select class="form-control">
+				  	<option value="">SELECIONE</option>					
+					<option value="">Isolada</option>
+					<option value="">Germinada 1 Lado</option>
+					<option value="">Germinada 2 Lado</option>
+					<option value="">Garagem</option>
+					<option value="">Galpão</option>
+					<option value="">Construção</option>
+				</select>
+			</div>
+			<div class="form-group col-6">
+				<h6>Patrimônio do Terreno</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>					
+					<option value="">Próprio</option>
+					<option value="">Foreiro</option>
+					<option value="">Religioso</option>
+					<option value="">Federal</option>
+					<option value="">Municipal</option>
+					<option value="">Estadual</option>
+					<option value="">Rendeiro</option>
+					<option value="">Posse</option>
+					<option value="">Ocupado</option>
+					<option value="">Financiado</option>
+					<option value="">Filantrópico</option>
+					<option value="">Outros</option>
+				</select>
+			</div>
+			<div class="form-group col-6">
+				<h6>Posição do Imóvel</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>					
+					<option value="">Nascente</option>
+					<option value="">Poente</option>
+					<option value="">Lateral</option>
+					<option value="">Outros</option>
+				</select>
+			</div>
+			<div class="form-group col-6">
+				<h6>Tributo/Isenção</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>					
+					<option value="">Tributado</option>
+					<option value="">Aposentado</option>
+					<option value="">C. Popular</option>
+					<option value="">Estadual</option>
+					<option value="">Municipal</option>
+					<option value="">Templo Religioso</option>
+					<option value="">Federal</option>
+					<option value="">Viúva</option>
+					<option value="">Outros</option>
+				</select>
+			</div>
+			<div class="form-group col-6">
+				<h6>Elevação</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>					
+					<option value="">Alvenaria</option>
+					<option value="">Concreto</option>
+					<option value="">Taipa/Madeira</option>
+					<option value="">Alvenaria/Concreto</option>
+					<option value="">Outros</option>
+				</select>
+			</div>
+			<div class="form-group col-6">
+				<h6>Piso</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>					
+					<option value="">Cerâmica</option>
+					<option value="">Cimentado</option>
+					<option value="">Cerâmica/Acimentado</option>
+					<option value="">Porcelanato</option>
+					<option value="">Outros</option>
+				</select>
+			</div>
+			<div class="form-group col-6">
+				<h6>Coberta</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>					
+					<option value="">Telha</option>
+					<option value="">Laje</option>
+					<option value="">Laje/Telha</option>
+					<option value="">Garagem</option>
+					<option value="">Telha/Forro</option>
+					<option value="">Laje/Forro</option>
+				</select>
+			</div>
+			<div class="form-group col-6">
+				<h6>Padrão</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>					
+					<option value="">Alto</option>
+					<option value="">Normal</option>
+					<option value="">Baixo</option>
+					<option value="">Muito Baixo</option>
+				</select>
+			</div>
+			<div class="form-group col-6">
+				<h6>Revestimento da Parede</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>					
+					<option value="">Pintura</option>
+					<option value="">Cerâmica</option>
+					<option value="">Acaiação</option>
+					<option value="">Reforma/Vazio</option>
+				</select>
+			</div>
+			<div class="form-group col-6">
+				<h6>Patrimonio da Construção</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>					
+					<option value="">Particular</option>
+					<option value="">Federal</option>
+					<option value="">Estadual</option>
+					<option value="">Municipal</option>
+					<option value="">Religioso</option>
+					<option value="">Outros</option>
+				</select>
+			</div>
+			<div class="form-group col-6">
+				<h6>Estado de Conservação</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>					
+					<option value="">Ótimo/Novo</option>
+					<option value="">Bom</option>
+					<option value="">Regular</option>
+					<option value="">Ruim</option>
+					<option value="">Reforma</option>
+				</select>
+			</div>
+			<div class="form-group col-6">
+				<h6>Técnica Construtiva</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>					
+					<option value="">Modelo Convencional</option>
+					<option value="">Padrão Médio</option>
+					<option value="">Design Contemporâneo</option>
+					<option value="">Outros</option>
+				</select>
+			</div>
+			<div class="form-group col-6">
+				<h6>Pedologia</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>					
+					<option value="">Pavimentado</option>
+					<option value="">Arenoso</option>
+					<option value="">Alagado</option>
+					<option value="">Rochedo</option>
+					<option value="">Combinação</option>
+				</select>
+			</div>
+			<div class="form-group col-6">
+				<h6>Topografia</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>					
+					<option value="">Abaixo do Nível</option>
+					<option value="">Acima do Nível</option>
+					<option value="">Combinação</option>
+					<option value="">Plano</option>
+					<option value="">Outros</option>
+				</select>
+			</div>
+			<div class="form-group col-6">
+				<h6>Edificação do Entorno</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>					
+					<option value="">Templo Religioso</option>
+					<option value="">Centros Comerciais</option>
+					<option value="">Contros de Saúde</option>
+					<option value="">Centros Educacionais</option>
+					<option value="">Centro Culturais</option>
+				</select>
+			</div>
+			<div class="form-group col-12">
+				<h6>Padrão das Edificações</h6>
+				<select class="form-control">
+					<option value="">SELECIONE</option>					
+					<option value="">Baixo</option>
+					<option value="">Medio</option>
+					<option value="">Alto</option>
+				</select>
+			</div>
+			<div class="form-group form-check col-12">
+				<h6>Serviços Urbanos</h6>
+				<div class="row">
+					<div class="form-check col-2 ">
+						<input type="checkbox" class="form-check-input" value="">
+						<label for="" class="form-check-label">Água</label></br>
+						<input type="checkbox" class="form-check-input" value="">  
+						<label for="" class="form-check-label">Iluminação</label></br>
+					</div>
+					<div class="form-check col-2">
+						<input type="checkbox" class="form-check-input" value=""> 
+						<label for="" class="form-check-label">Arborização</label></br>
+						<input type="checkbox" class="form-check-input" value=""> 
+						<label for="" class="form-check-label">Calçamento</label></br>
+					</div>
+					<div class="form-check col-2">
+						<input type="checkbox" class="form-check-input" value=""> 
+						<label for="" class="form-check-label">Asfalto</label></br>
+						<input type="checkbox" class="form-check-input" value=""> 
+						<label for="" class="form-check-label">Coleta de Lixo</label></br>
+					</div>
+					<div class="form-check col-2">
+						<input type="checkbox" class="form-check-input" value=""> 
+						<label for="" class="form-check-label">Drenagem</label></br>
+						<input type="checkbox" class="form-check-input" value=""> 
+						<label for="" class="form-check-label">Rede de Energia</label></br>
+					</div>
+					<div class="form-check col-2">
+						<input type="checkbox" class="form-check-input" value=""> 
+						<label for="" class="form-check-label">Rede de Esgoto</label></br>
+						<input type="checkbox" class="form-check-input" value=""> 
+						<label for="" class="form-check-label">Fossa Séptica</label></br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+
+
+
+
+<!-- JavaScript files-->
+    
+    <script th:src="@{/distribution/vendor/jquery/jquery.min.js}"></script>
+    <script th:src="@{/distribution/vendor/popper.js/umd/popper.min.js}"> </script>
+    <script th:src="@{/distribution/vendor/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/distribution/js/grasp_mobile_progress_circle-1.0.0.min.js}"></script>
+    <script th:src="@{/distribution/vendor/jquery.cookie/jquery.cookie.js}"> </script>
+    <script th:src="@{/distribution/vendor/chart.js/Chart.min.js}"></script>
+    <script th:src="@{/distribution/vendor/jquery-validation/jquery.validate.min.js}"></script>
+    <script th:src="@{/distribution/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js}"></script>
+    <script th:src="@{/distribution/js/charts-home.js}"></script>
+    <!-- Main File-->
+    <script th:src="@{/distribution/js/front.js}"></script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+<title>Spring-Boot Básico</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+
+	<section class="layout-content" layout:fragment="corpo">
+
+	<!-- Breadcrumb-->
+      <div class="breadcrumb-holder">
+        <div class="container-fluid">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+            <li class="breadcrumb-item active">Listar Imóveis</li>
+          </ul>
+        </div>
+      </div>
+      
+		<div class="container">
+			<div class="panel panel-default">
+						
+			
+			<div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Lista de Imóveis</h4>
+                  
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            Localização-Setor
+                          </th>
+                          <th>
+                            Localização-Quadra
+                          </th>
+                          <th>
+                            Zoneamento-Setor
+                          </th>
+                          <th>
+                            Zonemento-Quadra
+                          </th>
+                          <th>
+                            
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr th:each="imovel : ${imoveis}">
+                          <td th:text="${imovel.setor}"></td>
+									<td th:text="${imovel.quadra}"></td>
+									<td th:text="${imovel.novoSetor}"></td>
+									<td th:text="${imovel.novaQuadra}"></td>
+									<td>
+									<div class="center-btn">
+											<a class="btn btn-sm btn-primary"
+												th:href="@{/imovel/edit/{id}(id=${imovel.id})}">Editar</a> 
+											<a class="delete btn btn-sm btn-danger"
+												th:href="@{/imovel/delete/{id}(id=${imovel.id})}">Excluir</a>
+									</div>
+									</td>
+						 </tr>			
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+		</div>
+		</div>
+	</section>
+
+
+</body>
+</html>
